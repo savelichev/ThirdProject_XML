@@ -1,0 +1,62 @@
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+
+    <xsd:complexType name="dance">
+
+        <xsd:sequence>
+
+            <xsd:element name="id" type="xsd:ID"/>
+
+            <xsd:element name="type" type="danceTypes"/>
+
+            <xsd:element name="scene" type="xsd:string"/>
+
+            <xsd:element name="numberOfDancers" type="xsd:integer"/>
+
+            <xsd:element name="music" type="musicTypes"/>
+
+            <xsd:element name="dancers" type="dancers"/>
+
+            <xsd:element name="number" type="actionNumber"/>
+
+
+        </xsd:sequence>
+
+        <xsd:attribute name="title" type="xsd:string"/>
+
+
+    </xsd:complexType>
+
+
+    <xsd:complexType name="dancers">
+        <xsd:sequence>
+            <xsd:element name="dancer" minOccurs="1" maxOccurs="unbounded" type="xsd:string"/>
+        </xsd:sequence>
+    </xsd:complexType>
+
+
+    <xsd:simpleType name="musicTypes">
+        <xsd:restriction base="xsd:string">
+            <xsd:enumeration value="phonogram"/>
+            <xsd:enumeration value="live"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+
+
+    <xsd:simpleType name="danceTypes">
+        <xsd:restriction base="xsd:string">
+            <xsd:enumeration value="ballroom"/>
+            <xsd:enumeration value="street"/>
+            <xsd:enumeration value="ballet"/>
+            <xsd:enumeration value="latinos"/>
+            <xsd:enumeration value="folk"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+
+    
+    <xsd:simpleType name="actionNumber">
+        <xsd:restriction base="xsd:integer">
+            <xsd:pattern value="[1-20]"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+
+</xsd:schema>

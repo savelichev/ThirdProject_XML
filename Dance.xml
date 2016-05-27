@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<dance title="foxtrot">
+    <type>ballroom</type>
+    <scene>assembly hall</scene>
+    <numderOfDancers>2</numderOfDancers>
+    <music>phonogram</music>
+    <dancers>
+        <danser>Ivanov Ivan</danser>
+        <danser>Petrova Ludmila</danser>
+    </dancers>
+    <number>3</number>
+</dance>
