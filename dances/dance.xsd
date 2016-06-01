@@ -1,40 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" ?>
 <xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
 
-    <xsd:complexType name="dance">
+    <xsd:element name="dance" type="danceMain"/>
+
+    <xsd:complexType name="danceMain">
 
         <xsd:sequence>
 
-            <xsd:element name="id" type="xsd:ID"/>
-
-            <xsd:element name="type" type="danceTypes"/>
+            <xsd:element name="type" type="danceType"/>
 
             <xsd:element name="scene" type="xsd:string"/>
 
-            <xsd:element name="numberOfDancers" type="xsd:integer"/>
+            <xsd:element name="numberOfDancers" type="xsd:int"/>
 
-            <xsd:element name="music" type="musicTypes"/>
+            <xsd:element name="music" type="musicType"/>
 
-            <xsd:element name="dancers" type="dancers"/>
+            <xsd:element name="dancers" type="dancerInfo"/>
 
-            <xsd:element name="number" type="actionNumber"/>
-
+            <xsd:element name="number" type="xsd:int"/>
 
         </xsd:sequence>
 
         <xsd:attribute name="title" type="xsd:string"/>
-
+        <xsd:attribute name="id" type="xsd:int"/>
 
     </xsd:complexType>
 
 
-    <xsd:complexType name="dancers">
+    <xsd:complexType name="dancerInfo">
         <xsd:sequence>
-            <xsd:element name="dancer" minOccurs="1" maxOccurs="unbounded" type="xsd:string"/>
+            <xsd:element type="xsd:string" name="dancer" maxOccurs="unbounded" minOccurs="1"/>
         </xsd:sequence>
     </xsd:complexType>
 
 
-    <xsd:simpleType name="musicTypes">
+    <xsd:simpleType name="musicType">
         <xsd:restriction base="xsd:string">
             <xsd:enumeration value="phonogram"/>
             <xsd:enumeration value="live"/>
@@ -42,7 +42,7 @@
     </xsd:simpleType>
 
 
-    <xsd:simpleType name="danceTypes">
+    <xsd:simpleType name="danceType">
         <xsd:restriction base="xsd:string">
             <xsd:enumeration value="ballroom"/>
             <xsd:enumeration value="street"/>
@@ -52,11 +52,5 @@
         </xsd:restriction>
     </xsd:simpleType>
 
-
-    <xsd:simpleType name="actionNumber">
-        <xsd:restriction base="xsd:integer">
-            <xsd:pattern value="[1-20]"/>
-        </xsd:restriction>
-    </xsd:simpleType>
 
 </xsd:schema>
