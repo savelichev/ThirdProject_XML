@@ -22,6 +22,8 @@ public class Main {
         DanceMain danceByDOM = ParserInitializer.parseByDOM(xmlFile);
         System.out.println("DOM result: "+danceByDOM);
 
+        DanceMain danseByStAX = ParserInitializer.parseByStAX(xmlFile);
+        System.out.println("StAX result: "+danseByStAX);
 
     }
 }

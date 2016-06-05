@@ -6,6 +6,8 @@ import org.xml.sax.SAXException;
 import javax.xml.parsers.ParserConfigurationException;
 import javax.xml.parsers.SAXParserFactory;
 import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.IOException;
 
 /**
@@ -48,4 +50,15 @@ public class ParserInitializer {
         return dom.dance;
     }
 
+    public static DanceMain parseByStAX(File file){
+
+        StAXDanceParser stax = new StAXDanceParser();
+        try {
+            stax.parse(new FileInputStream(file.getPath()));
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
+
+        return stax.dance;
+    }
 }

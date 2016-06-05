@@ -17,6 +17,7 @@ import java.io.IOException;
 
 public class DOMDanceParser {
 
+
     DanceMain dance = new DanceMain();
 
     public DanceMain parseByDOM() throws ParserConfigurationException, IOException, SAXException {
