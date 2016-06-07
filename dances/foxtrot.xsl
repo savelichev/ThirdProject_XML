@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+<xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:mt="musicType.ua">
     <xsl:template match="/">
         <html>
             <body>
@@ -42,8 +42,9 @@
                     <tr>
                         <td>Music type</td>
                         <td>
-                            <xsl:value-of select="//music"/>
+                            <xsl:value-of select="//mt:music"/>
                         </td>
+
                     </tr>
                     <xsl:for-each select="//dancer">
                         <tr>
@@ -54,6 +55,7 @@
                         </tr>
                     </xsl:for-each>
                     <tr>
+
                         <td>Number of action</td>
                         <td>
                             <xsl:value-of select="//number"/>

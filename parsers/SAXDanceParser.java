@@ -57,7 +57,7 @@ public class SAXDanceParser extends DefaultHandler {
                 dance.setNumber(new Integer(s));
             }
 
-            if (thisElement.equals("music")) {
+            if (thisElement.equals("mt:music")) {
                 if (s.equals("phonogram")) {
                     dance.setMusic(MusicType.PHONOGRAM);
                 } else if (s.equals("live")) {

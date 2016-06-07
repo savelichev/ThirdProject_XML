@@ -22,7 +22,8 @@ public class Main {
         File xsdFile = new File("src/dances/dance.xsd");
         File xslFile = new File("src/dances/foxtrot.xsl");
 
-        System.out.println("Result of validation file: \""+xmlFile+ "\" - "+ DanceXMLValidator.validateDanceXml(xsdFile, xmlFile));
+        System.out.println("Result of validation file: \""+xmlFile+ "\" - "
+                + DanceXMLValidator.validateDanceXml(xsdFile, xmlFile));
 
         DanceMain danceBySAX =ParserInitializer.parseBySAX(xmlFile);
         System.out.println("SAX result: "+danceBySAX);

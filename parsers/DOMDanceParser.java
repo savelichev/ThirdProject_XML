@@ -42,7 +42,7 @@ public class DOMDanceParser {
 
             setDancers(element);
 
-            setMusicType(element.getElementsByTagName("music").item(0).getChildNodes().item(0).getNodeValue());
+            setMusicType(element.getElementsByTagName("mt:music").item(0).getChildNodes().item(0).getNodeValue());
 
             dance.setNumber(Integer.parseInt(element.getElementsByTagName("number").item(0).getChildNodes().item(0).getNodeValue()));
             return dance;

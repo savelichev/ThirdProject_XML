@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+            xmlns:mt="musicType.ua">
+    <xsd:import schemaLocation="musicType.xsd"  namespace="musicType.ua"/>
+
 
     <xsd:element name="dance" type="danceMain"/>
 
@@ -13,7 +16,7 @@
 
             <xsd:element name="numberOfDancers" type="xsd:int"/>
 
-            <xsd:element name="music" type="musicType"/>
+            <xsd:element ref="mt:music"/>
 
             <xsd:element name="dancers" type="dancerInfo"/>
 
@@ -34,12 +37,6 @@
     </xsd:complexType>
 
 
-    <xsd:simpleType name="musicType">
-        <xsd:restriction base="xsd:string">
-            <xsd:enumeration value="phonogram"/>
-            <xsd:enumeration value="live"/>
-        </xsd:restriction>
-    </xsd:simpleType>
 
 
     <xsd:simpleType name="danceType">
